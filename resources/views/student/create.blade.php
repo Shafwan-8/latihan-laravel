@@ -4,12 +4,12 @@
 
     <div class="card shadow-md">
         <div class="card-body">
-            
+
             <form action="{{ route('student.store') }}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}">
                     @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -17,7 +17,7 @@
 
                 <div class="mb-3">
                     <label for="nim" class="form-label">NIM</label>
-                    <input type="text" class="form-control @error('nim') is-invalid @enderror" id="nim" name="nim">
+                    <input type="text" class="form-control @error('nim') is-invalid @enderror" id="nim" name="nim" value="{{ old('nim') }}"     >
                     @error('nim')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
